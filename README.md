@@ -29,11 +29,13 @@ There are 3 outputs which the user can access
 
 Firstly, import the module in your terraform project
 
-    module "[variable-name]" {
-     source = "github.com/Legin-ML/terraform_s3_bucket"
+```hcl
+module "[variable-name]" {
+    source = "github.com/Legin-ML/terraform_s3_bucket"
 
-     bucket_name = "<your-bucket-name>"
-    }
+    bucket_name = "<your-bucket-name>"
+}
+```
 
 [variable-name] can be any name you want.
 
@@ -44,44 +46,50 @@ The module name and output can be set to the user's preference. In this example,
 ### Bucket with no public access and no versioning
 
 ```hcl
-    module "s3_bucket" {
-    source = "github.com/Legin-ML/terraform_s3_bucket"
+module "s3_bucket" {
+source = "github.com/Legin-ML/terraform_s3_bucket"
 
-        bucket_name = "<your-bucket-name>"
+    bucket_name = "<your-bucket-name>"
 
-        # Optional arguments are assumed as default.
-        }
+    # Optional arguments are assumed as default.
+    }
 ```
 
 ### Bucket with public access
 
-    module "s3_bucket" {
-     source = "github.com/Legin-ML/terraform_s3_bucket"
+```hcl
+module "s3_bucket" {
+    source = "github.com/Legin-ML/terraform_s3_bucket"
 
-     bucket_name = "<your-bucket-name>"
-     bucket_public_access = true
-    }
+    bucket_name = "<your-bucket-name>"
+    bucket_public_access = true
+}
+```
 
 ### Bucket with versioning
 
-    module "s3_bucket" {
-     source = "github.com/Legin-ML/terraform_s3_bucket"
+```hcl
+module "s3_bucket" {
+    source = "github.com/Legin-ML/terraform_s3_bucket"
 
-     bucket_name = "<your-bucket-name>"
-     bucket_versioning = true
-    }
+    bucket_name = "<your-bucket-name>"
+    bucket_versioning = true
+}
+```
 
 ### Bucket with Outputs
 
-    module "s3_bucket" {
-     source = "github.com/Legin-ML/terraform_s3_bucket"
+```hcl
+module "s3_bucket" {
+    source = "github.com/Legin-ML/terraform_s3_bucket"
 
-     bucket_name = "<your-bucket-name>"
-     bucket_versioning = false
-     bucket_public_access = true
-    }
+    bucket_name = "<your-bucket-name>"
+    bucket_versioning = false
+    bucket_public_access = true
+}
 
-    output "s3_domain"{
-     value = "${module.s3_bucket.domain_name}"
-    }
-    # The other outputs are declared like this block
+output "s3_domain"{
+    value = "${module.s3_bucket.domain_name}"
+}
+# The other outputs are declared like this block
+```
