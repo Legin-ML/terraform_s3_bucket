@@ -1,16 +1,16 @@
-variable "s3_bucket_name" {
+variable "bucket_name" {
   description = "Name for the S3 bucket (Must be globally unique)"
   type = string
 }
 
-variable "s3_bucket_access_value" {
-  description = "Specify the Access Control List for the Bucket"
-  type = string
-  default = "private"
+variable "bucket_public_access" {
+  description = "Should the Bucket be public? <true/false>   [default: false]"
+  type = bool
+  default = false
 }
 
-variable "s3_bucket_versioning_value" {
-  description = "Enables S3 bucket Versioning(default: false)"
+variable "bucket_versioning" {
+  description = "Should S3 bucket versioning be enabled? <true/false>  [default: false]"
   type = bool
   default = false
 }
