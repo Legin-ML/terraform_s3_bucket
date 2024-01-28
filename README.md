@@ -43,15 +43,16 @@ The module name and output can be set to the user's preference. In this example,
 
 ### Bucket with no public access and no versioning
 
-    '''HCL
-    module "s3_bucket" {
-     source = "github.com/Legin-ML/terraform_s3_bucket"
+'''HCL
+module "s3_bucket" {
+source = "github.com/Legin-ML/terraform_s3_bucket"
 
      bucket_name = "<your-bucket-name>"
 
      # Optional arguments are assumed as default.
     }
-    '''
+
+'''
 
 ### Bucket with public access
 
